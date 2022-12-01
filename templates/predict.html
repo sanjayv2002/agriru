@@ -15,38 +15,77 @@
     <title>Crop Recomendation</title>
 </head>
 
-<body>
+<body class="bg-slate-900">
     <section id="prediction-form">
-        <form class="" action="/predict" method="POST">
-            <h1 class="text-center text-4xl mt-10">CROP RECOMMENDATION SYSTEM</h1>
-            <div class="flex justify-center items-center w-screen my-10">
-                <div>
-                    <label for="city" class="city">City</label>
-                    <input type="text" class=" border border-slate-500 rounded" id="city" name="city">
-                </div>
+        <h1 class="text-center text-4xl mt-10">CROP RECOMMENDATION SYSTEM</h1>
+        <form class="form-style mt-16 self-width mx-auto rounded px-6 py-6 bg-slate-800" action="/"
+            method="POST">
+            <div class="flex flex-col">
+                <label for="city" class="city mt-10">Do you have Soil test results?</label>
+                <select class="res text-black" id="res" name="res" />
+                <option class="text-black" selected value="-1">Select</option>
+                <option class="text-black" value=1>Yes</option>
+                <option class="text-black" value=0>No</option>
+                </select>
             </div>
-            <h1 class="text-2xl text-center">OR</h1>
-            <div class="flex flex-col self-width mx-auto justify-between items-center">
-                <div class="mt-10">
-                    <label for="N" class="N">Nitrogen Ratio(N) </label>
-                    <input type="text" class="border border-slate-500 rounded" id="N" name="N" value="1">
-                </div>
-                <div class="mt-3">
-                    <label for="K" class="K">Potassium Ratio(K) </label>
-                    <input type="text" class="border border-slate-500 rounded" id="K" name="K" value="1">
-                </div>
-                <div class="mt-3">
-                    <label for="P" class="P">Phospours Ratio(P) </label>
-                    <input type="text" class="border border-slate-500 rounded" id="P" name="P" value="1">
-                </div>
-                <div class="mt-3">
-                    <label for="ph" class="ph" name="ph">PH of soil</label>
-                    <input type="text" class="border border-slate-500 rounded" id="ph" name="ph" value="7">
-                </div>
-                <button type="submit" class="bg-slate-800 rounded text-white py-2 px-4 my-4">Predict</button>
+            <div class="discont" id="discont">
+            </div>
+            <div class="tescont" id="tescont">
             </div>
         </form>
     </section>
+    <script defer>
+        const res = document.getElementById("res")
+        const discont = document.getElementById("discont")
+        const tescont = document.getElementById("tescont")
+        function yesHandler() {
+            console.log(res.value)
+            if (res.value == 0) {
+                tescont.innerHTML = ``
+                discont.innerHTML = ` <div class="my-3">
+                    <div class="flex flex-col">
+                        <label for="dis" class="dis" id="dis">District</label>
+                        <input type="text" class="border border-slate-500 rounded" id="dis" name="dis">
+                    </div>
+                    <div class="flex mt-3 flex-col">
+                        <label for="city" class="city" id="city">City</label>
+                        <input type="text" class="border border-slate-500 rounded mb-6" id="city" name="city">
+                    </div>
+                    <button type="submit" class="bg-slate-900 rounded text-white py-2 px-4 my-4">Predict</button>
+                </div>`
+            }
+            else if(res.value == 1){
+                discont.innerHTML = ``
+                tescont.innerHTML = `<div class="flex mt-10 flex-col">
+                        <label for="dis" class="dis">District</label>
+                        <input type="text" class="border border-slate-500 rounded" id="dis" name="dis">
+                    </div>
+                    <div class="flex mt-3 flex-col">
+                        <label for="city" class="city" id="city">City</label>
+                        <input type="text" class="border border-slate-500 rounded" id="city" name="city">
+                    </div>
+                <div class="mt-3 flex flex-col">
+                    <label for="N" class="N" id="N">Nitrogen Ratio(N) </label>
+                    <input type="text " class="border border-slate-500 rounded" id="N" name="N" value="1">
+                </div>
+                <div class="mt-3 flex flex-col">
+                    <label for="K" class="K" id="K">Potassium Ratio(K) </label>
+                    <input type="text" class="border border-slate-500 rounded" id="K" name="K" value="1">
+                </div>
+                <div class="mt-3 flex flex-col">
+                    <label for="P" class="P" id="P">Phospours Ratio(P) </label>
+                    <input type="text" class="border border-slate-500 rounded" id="P" name="P" value="1">
+                </div>
+                <div class="mt-3 flex flex-col">
+                    <label for="ph" class="ph" name="ph" id="ph">PH of soil</label>
+                    <input type="text" class="border border-slate-500 rounded" id="ph" name="ph" value="7">
+                </div>
+                <button type="submit" class="bg-slate-900 rounded text-white py-2 px-4 my-4">Predict</button>`
+            }
+        }
+
+        res.addEventListener('click', yesHandler)
+    </script>
 </body>
 
 </html>
