@@ -27,7 +27,7 @@ def predict():
 		print('this works')
 		# district
 		dis = str(request.form.get('dis'))
-		print(dis)
+		city = str(request.form.get('city'))
 		# nitrogen ratio
 		N = float(request.form.get('N'))
 		# potassium ratio
@@ -54,6 +54,12 @@ def predict():
 
 
 	return render_template("predict.html")
+
+@app.route("/crop",methods=['GET'])
+@cross_origin()
+def crop():
+	apple = 'apple_pic'
+	return render_template("crop.html", name = apple)
 
 if __name__=='__main__':
 	app.run(debug=True)
