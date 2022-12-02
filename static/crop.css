@@ -1,0 +1,10 @@
+.self-width{
+    width: 1000px;
+    max-width: 1000px;
+}
+.p-width{
+    width: 450px;
+}
+.h-style{
+    text-transform: capitalize;
+}
