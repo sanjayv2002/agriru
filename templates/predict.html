@@ -19,8 +19,9 @@
     <section id="prediction-form">
         <h1 class="text-center text-4xl mt-10">CROP RECOMMENDATION SYSTEM</h1>
         <form class="form-style mt-16 self-width mx-auto rounded px-6 py-6 bg-slate-800" action="/" method="POST">
+            <h1 class="text-center text-2xl mt-10">Choose from the Options given below : </h1>
             <div class="flex flex-col">
-                <label for="city" class="city mt-10">Do you have Soil test results?</label>
+                <label for="city" class="city mt-8 my-4">Do you have Soil test results?</label>
                 <select class="res text-black" id="res" name="res" />
                 <option class="text-black" selected hidden value="-1">Select</option>
                 <option class="text-black" value=1>Yes</option>
@@ -31,7 +32,7 @@
             </div>
             <div class="tescont" id="tescont">
             </div>
-            <button type="submit" class="bg-slate-900 rounded text-white py-2 px-4 my-4" id="btn">Predict</button>
+            <button type="submit" class="bg-green-600 rounded text-white py-2 px-4 my-4 btn" id="btn">Predict</button>
         </form>
     </section>
     <script defer>
@@ -49,6 +50,7 @@
                         <select class="dis text-black my-3" id="dis" name="dis">
                         <option class="text-black" selected hidden value="-1">Select</option>
                         <option class="text-black" value="ARIYALUR">ARIYALUR</option>
+                        <option class="text-black" value="CHENNAI">CHENNAI</option>
                         <option class="text-black" value="COIMBATORE">COIMBATORE</option>
                         <option class="text-black" value="CUDDALORE">CUDDALORE</option>
                         <option class="text-black" value="DHARMAPURI">DHARMAPURI</option>
