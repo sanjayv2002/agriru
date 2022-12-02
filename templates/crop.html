@@ -17,11 +17,21 @@
         <div class="border border-black rounded rounded-md self-width mx-auto bg-slate-700">
             <h1 class="text-4xl text-center mt-10 h-style">Recomended Crop - {{namey}}</h1>
             <div class="flex justify-around items-center">
-                <img src="../static/{{name}}.jpg" alt="Image of the crop" class="my-10 rounded rounded-md border-black" height="400px" width="400px">
+                <img src="../static/{{name}}.jpg" alt="Image of the crop" class="my-10 rounded rounded-md border-black"
+                    height="400px" width="400px">
                 <p class="p-width">{{content}}</p>
             </div>
         </div>
     </div>
+    <h1 class="text-center text-4xl my-10">{{header}}</h1>
+    <div id="chart" class="chart bg-slate-900"></div>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    let graphs = {{ graphJSON |safe }};
+    Plotly.plot('chart', graphs);
+</script>
+
 </body>
 
 </html>

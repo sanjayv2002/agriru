@@ -99,9 +99,15 @@ def crop():
 		'papaya_pic':'Deep, well drained sandy loam soil is ideal for cultivation of papaya.',
 		'rice_pic':' Rice crop needs a hot and humid climate. It is best suited to regions which have high humidity, prolonged sunshine and an assured supply of water.'
 	}
-
+	opt = tools.graph_val(out)
+	fig = tools.graph(opt)
+	header = '{} CROP OPTIMIZER'.format(out.upper())
+	graphjson= plot_utl(fig)
 	print(apple)
-	return render_template("crop.html", name = apple, namey = namey,content = dict_info[apple])
+	return render_template("crop.html", name = apple, namey = namey,content = dict_info[apple], graphJSON = graphjson, header = header)
+
+def plot_utl(fig):
+	return json.dumps(fig, cls = plotly.utils.PlotlyJSONEncoder)
 
 if __name__=='__main__':
 	app.run(debug=True)
