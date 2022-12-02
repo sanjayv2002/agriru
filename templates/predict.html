@@ -93,8 +93,42 @@
             else if (res.value == 1) {
                 discont.innerHTML = ``
                 tescont.innerHTML = `<div class="flex mt-10 flex-col">
-                        <label for="dis" class="dis">District</label>
-                        <input type="text" class="border border-slate-500 rounded" id="dis" name="dis">
+                    <label for="dis" class="dis" id="dis">District</label>
+                        <select class="dis text-black my-3" id="dis" name="dis">
+                        <option class="text-black" selected hidden value="-1">Select</option>
+                        <option class="text-black" value="ARIYALUR">ARIYALUR</option>
+                        <option class="text-black" value="CHENNAI">CHENNAI</option>
+                        <option class="text-black" value="COIMBATORE">COIMBATORE</option>
+                        <option class="text-black" value="CUDDALORE">CUDDALORE</option>
+                        <option class="text-black" value="DHARMAPURI">DHARMAPURI</option>
+                        <option class="text-black" value="DINDIGUL">DINDIGUL</option>
+                        <option class="text-black" value="ERODE">ERODE</option>
+                        <option class="text-black" value="KANCHIPURAM">KANCHIPURAM</option>
+                        <option class="text-black" value="KANNIYAKUMARI">KANNIYAKUMARI</option>
+                        <option class="text-black" value="KARUR">KARUR</option>
+                        <option class="text-black" value="KRISHNAGIRI">KRISHNAGIRI</option>
+                        <option class="text-black" value="MADURAI">MADURAI</option>
+                        <option class="text-black" value="NAGAPATTINAM">NAGAPATTINAM</option>
+                        <option class="text-black" value="NAMAKKAL">NAMAKKAL</option>
+                        <option class="text-black" value="PERAMBALUR">PERAMBALUR</option>
+                        <option class="text-black" value="PUDUKKOTTAI">PUDUKKOTTAI</option>
+                        <option class="text-black" value="RAMANATHAPURAM">RAMANATHAPURAM</option>
+                        <option class="text-black" value="SALEM">SALEM</option>
+                        <option class="text-black" value="SIVAGANGA">SIVAGANGA</option>
+                        <option class="text-black" value="THANJAVUR">THANJAVUR</option>
+                        <option class="text-black" value="NILGIRI">THE NILGIRIS</option>
+                        <option class="text-black" value="THENI">THENI</option>
+                        <option class="text-black" value="THIRUVALLUR">THIRUVALLUR</option>
+                        <option class="text-black" value="THIRUVARUR">THIRUVARUR</option>
+                        <option class="text-black" value="TIRUCHIRAPPALLI">TIRUCHIRAPPALLI</option>
+                        <option class="text-black" value="TIRUNELVELI">TIRUNELVELI</option>
+                        <option class="text-black" value="TIRUPPUR">TIRUPPUR</option>
+                        <option class="text-black" value="TIRUVANNAMALAI">TIRUVANNAMALAI</option>
+                        <option class="text-black" value="TUTICORIN">TUTICORIN</option>
+                        <option class="text-black" value="VELLORE">VELLORE</option>
+                        <option class="text-black" value="VILLUPURAM">VILLUPURAM</option>
+                        <option class="text-black" value="VIRUDHUNAGAR">VIRUDHUNAGAR</option>
+                    </select>
                     </div>
                     <div class="flex mt-3 flex-col">
                         <label for="city" class="city" id="city">City</label>
